@@ -1,0 +1,3 @@
+﻿IMPORTANT NOTES ABOUT WORKING WITH SELENIUM AND C#:
+1) SelectElement class is used for Dropdowns
+2) ExpectedConditions comes from SeleniumExtras.WaitHelpers, when using WebDriverWait.Until(ExpectedConditions)
