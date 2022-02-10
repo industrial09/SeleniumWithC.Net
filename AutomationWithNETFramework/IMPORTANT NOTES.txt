@@ -1,4 +1,6 @@
-﻿IMPORTANT NOTES ABOUT WORKING WITH SELENIUM AND C#:
+﻿AUTOMATION Repo with C# using Selelnium, with Server(RestSharp) and External source (json file, with NewtonSoft)  data
+ 
+ IMPORTANT NOTES ABOUT WORKING WITH SELENIUM AND C#:
 1) SelectElement class is used for Dropdowns
 2) ExpectedConditions comes from SeleniumExtras.WaitHelpers, when using WebDriverWait.Until(ExpectedConditions)
 
