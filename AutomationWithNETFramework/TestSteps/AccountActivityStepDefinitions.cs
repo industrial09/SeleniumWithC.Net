@@ -26,22 +26,6 @@ namespace AutomationWithNETFramework
             employeeList = new EmployeeList(Driver, ServerSettings);
         }
 
-        [Given(@"I navigate to Landing page")]
-        public void GivenINaviageToLandingPage()
-        {
-            Driver.driver.Navigate().GoToUrl("http://eaapp.somee.com/");
-        }
-
-        [When(@"I login to site")]
-        public void WhenILoginToSite()
-        {
-            landingpage.clickLoginLink();
-            loginpage.enterUsername("admin");
-            loginpage.enterPassword("password");
-            loginpage.clickRememberMeChkBox();
-            loginpage.clicksignInBtn();
-        }
-
         [Given(@"I click Employee List tab")]
         public void GivenIClickEmployeeListTab()
         {

@@ -3,9 +3,8 @@
     "",
     "\\AutomationWithNETFramework",
     "\\AutomationWithNETFramework\\Features",
-    "\\AutomationWithNETFramework\\Hook",
     "\\AutomationWithNETFramework\\TestSteps"
   ],
-  "SelectedNode": "\\AutomationWithNETFramework\\Features\\AccountActivity.feature",
+  "SelectedNode": "\\AutomationWithNETFramework.sln",
   "PreviewInSolutionExplorer": false
 }

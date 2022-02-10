@@ -17,9 +17,9 @@ namespace AutomationWithNETFramework.Pages
             accountActivityTab.Click();
         }
 
-        public void clickPayBillsTab() {
-            IWebElement payBillsTab = Driver.driver.FindElement(By.XPath("//a[contains(text(),'Pay Bills')]"));
-            payBillsTab.Click();
+        public void clickManageUsersTab() {
+            IWebElement manageUsersTab = Driver.driver.FindElement(By.XPath("//a[contains(text(),'Manage Users')]"));
+            manageUsersTab.Click();
         } 
     }
 }

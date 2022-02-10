@@ -10,7 +10,12 @@
       "ProjectGuid": "b1496a54-632d-493b-b39e-96bc505690cc",
       "DisplayName": "AutomationWithNETFramework",
       "ColorIndex": 0
+    },
+    "63fece9a-7a5b-435f-9e5f-1c8727696054": {
+      "ProjectGuid": "63fece9a-7a5b-435f-9e5f-1c8727696054",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

@@ -1,5 +1,11 @@
 ﻿using AutomationWithNETFramework.Hook;
+using AutomationWithNETFramework.Utilities;
+using Newtonsoft.Json;
 using OpenQA.Selenium;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 
 namespace AutomationWithNETFramework.Pages
 {
@@ -26,6 +32,17 @@ namespace AutomationWithNETFramework.Pages
         public void clicksignInBtn() {
             IWebElement signInBtn = Driver.driver.FindElement(By.CssSelector("input[type=submit]"));
             signInBtn.Click();
-        } 
+        }
+
+        public string getDataFromJsonFile() {
+            string dataFromJsonFile="";
+            using (var reader = new StreamReader(@"C:\Users\Christian Bautista\source\repos\AutomationWithNETFramework\AutomationWithNETFramework\Utilities\externalData.json")) { 
+                dataFromJsonFile = reader.ReadToEnd();
+                var data = JsonConvert.DeserializeObject<ExternalData>(dataFromJsonFile);
+                string user = data.username;
+                string password = data.password;
+            }
+                return dataFromJsonFile;
+        }
     }
 }

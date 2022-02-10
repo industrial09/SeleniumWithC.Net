@@ -1,3 +1,19 @@
 ﻿IMPORTANT NOTES ABOUT WORKING WITH SELENIUM AND C#:
 1) SelectElement class is used for Dropdowns
 2) ExpectedConditions comes from SeleniumExtras.WaitHelpers, when using WebDriverWait.Until(ExpectedConditions)
+
+When installing Pickles, it has to be version 2.5
+For further Pickles info http://docs.picklesdoc.com/en/latest/ArgumentsFeatureDirectory/
+
+Pickle commands to execute from console:
+Pickle-Features -FeatureDirectory .\AutomationWithNETFramework\Features -OutputDirectory C:\PickleReport -SystemUnderTestName "UdemyApp" -SystemUderTestVersion "1.0" -DocumentationFormat html or dhtml
+
+For installing/using Pickles gui:
+https://www.youtube.com/watch?v=UkoS-KpDi2w
+1st need to install Chocolatey
+2nd execute 'choco install pickelsui'
+3rd just execute 'picklesui' to open interface
+
+It is better to use ExtentReports plugin!!
+
+For working with JSon files in .NET apps, NewtonSoft plugin can be used
