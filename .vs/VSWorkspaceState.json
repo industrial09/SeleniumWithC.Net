@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\AutomationWithNETFramework",
-    "\\AutomationWithNETFramework\\Features",
-    "\\AutomationWithNETFramework\\TestSteps"
+    "\\AutomationWithNETFramework"
   ],
-  "SelectedNode": "\\AutomationWithNETFramework.sln",
   "PreviewInSolutionExplorer": false
 }

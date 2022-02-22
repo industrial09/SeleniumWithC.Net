@@ -93,6 +93,10 @@
               "target": "Package",
               "version": "[3.9.40, )"
             },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
+            },
             "WebDriverManager": {
               "target": "Package",
               "version": "[2.12.3, )"

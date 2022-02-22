@@ -38,9 +38,9 @@ namespace AutomationWithNETFramework.Pages
             string dataFromJsonFile="";
             using (var reader = new StreamReader(@"C:\Users\Christian Bautista\source\repos\AutomationWithNETFramework\AutomationWithNETFramework\Utilities\externalData.json")) { 
                 dataFromJsonFile = reader.ReadToEnd();
-                var data = JsonConvert.DeserializeObject<ExternalData>(dataFromJsonFile);
-                string user = data.username;
-                string password = data.password;
+                //var data = JsonConvert.DeserializeObject<ExternalData>(dataFromJsonFile);
+                /*string user = data.username;
+                string password = data.password;*/
             }
                 return dataFromJsonFile;
         }

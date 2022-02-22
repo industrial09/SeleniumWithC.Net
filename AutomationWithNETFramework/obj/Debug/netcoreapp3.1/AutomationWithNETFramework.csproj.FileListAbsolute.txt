@@ -193,3 +193,9 @@ C:\Users\Christian Bautista\source\repos\AutomationWithNETFramework\AutomationWi
 C:\Users\Christian Bautista\source\repos\AutomationWithNETFramework\AutomationWithNETFramework\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
 C:\Users\Christian Bautista\source\repos\AutomationWithNETFramework\AutomationWithNETFramework\bin\Debug\netcoreapp3.1\runtimes\win-x64\nativeassets\netcoreapp2.2\aspnetcorev2_inprocess.dll
 C:\Users\Christian Bautista\source\repos\AutomationWithNETFramework\AutomationWithNETFramework\bin\Debug\netcoreapp3.1\runtimes\win-x86\nativeassets\netcoreapp2.2\aspnetcorev2_inprocess.dll
+C:\Users\Christian Bautista\source\repos\AutomationWithNETFramework\AutomationWithNETFramework\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Christian Bautista\source\repos\AutomationWithNETFramework\AutomationWithNETFramework\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Christian Bautista\source\repos\AutomationWithNETFramework\AutomationWithNETFramework\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Christian Bautista\source\repos\AutomationWithNETFramework\AutomationWithNETFramework\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Christian Bautista\source\repos\AutomationWithNETFramework\AutomationWithNETFramework\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Christian Bautista\source\repos\AutomationWithNETFramework\AutomationWithNETFramework\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

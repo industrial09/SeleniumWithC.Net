@@ -21,4 +21,12 @@ Scenario Outline: Validate Checking Activity data
 	Then I validate new employee has been added as <name>
 Examples: 
 	| name      | salary | durationworked | grade | email                      |
-	| Alexandra | 70000  | 12             | 6     | industrialcool@hotmail.com |
+	| Alexander | 70000  | 12             | 6     | industrialcool@hotmail.com |
+
+Scenario Outline: Validate employee name data against DB data
+	Given I click Employee List tab
+	Then I search for any value <author>
+	Then I validate data displayed against database data <author>
+Examples: 
+	| author |
+	| Karthik|

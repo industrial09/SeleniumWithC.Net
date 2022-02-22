@@ -15,6 +15,7 @@ namespace AutomationWithNETFramework.TestSteps
         DriverHelper Driver;
         LandingPage landingpage;
         LoginPage loginpage;
+        ExternalData data;
 
         //Appying Context Injection
         CommomStepDefinitions(DriverHelper driver)
@@ -29,7 +30,7 @@ namespace AutomationWithNETFramework.TestSteps
         {
             var dataFromJsonFile = loginpage.getDataFromJsonFile();
             var data = JsonConvert.DeserializeObject<ExternalData>(dataFromJsonFile);
-            Driver.driver.Navigate().GoToUrl(data.url);
+            Driver.driver.Navigate().GoToUrl(data.siteurl);
         }
 
         [When(@"I login to site")]

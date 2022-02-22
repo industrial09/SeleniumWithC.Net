@@ -1,7 +1,9 @@
 using AutomationWithNETFramework.Hook;
+using AutomationWithNETFramework.Locators;
 using AutomationWithNETFramework.Pages;
 using AutomationWithNETFramework.Utilities;
 using NUnit.Framework;
+using System.Collections.Generic;
 using TechTalk.SpecFlow;
 
 namespace AutomationWithNETFramework
@@ -13,8 +15,11 @@ namespace AutomationWithNETFramework
         LandingPage landingpage;
         LoginPage loginpage;
         HomePage homepage;
+        EmployeeListLocators locs;
         EmployeeList employeeList;
         ServerSettings ServerSettings;
+
+        string valueGottenFromUI;
 
         //Appying Context Injection
         AccountActivityStepDefinitions(DriverHelper driver, ServerSettings serverSettings) { 
@@ -41,7 +46,9 @@ namespace AutomationWithNETFramework
         [Then(@"I validate data displayed against server data")]
         public void ThenIValidateDataDisplayedAgainstServerData()
         {
-            Assert.That(employeeList.validateDataDisplayed(), Is.True);
+            List<string> list = new List<string>();
+            list.Add("author");
+            Assert.That(employeeList.validateGetRequestDataDisplayed("posts/{Id}", "1", list), Is.True);
         }
 
         [Then(@"I search for a value ""([^""]*)""")]
@@ -62,5 +69,19 @@ namespace AutomationWithNETFramework
             employeeList.searchForAValue(name);
             Assert.That(employeeList.validateDataDisplayed(name), Is.True);
         }
+
+        [Then(@"I search for any value (.*)")]
+        public void ThenISearchForAnyValue(string valueToSearchFor)
+        {
+            employeeList.searchForAValue(valueToSearchFor);
+            valueGottenFromUI = employeeList.getUiAuthorData();
+        }
+
+        [Then(@"I validate data displayed against database data (.*)")]
+        public void ThenIValidateDataDisplayedAgainstDatabaseData(string variableValue)
+        {
+            employeeList.validateDBDataAgainstUIData("getOneAuthor", variableValue, valueGottenFromUI);
+        }
+
     }
 }

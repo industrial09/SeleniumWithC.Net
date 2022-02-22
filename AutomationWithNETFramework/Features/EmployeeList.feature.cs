@@ -175,7 +175,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validate Checking Activity data")]
-        [NUnit.Framework.TestCaseAttribute("Alexandra", "70000", "12", "6", "industrialcool@hotmail.com", null)]
+        [NUnit.Framework.TestCaseAttribute("Alexander", "70000", "12", "6", "industrialcool@hotmail.com", null)]
         public virtual void ValidateCheckingActivityData(string name, string salary, string durationworked, string grade, string email, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
@@ -217,6 +217,51 @@ this.FeatureBackground();
 #line hidden
 #line 21
  testRunner.Then(string.Format("I validate new employee has been added as {0}", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Validate employee name data against DB data")]
+        [NUnit.Framework.TestCaseAttribute("Karthik", null)]
+        public virtual void ValidateEmployeeNameDataAgainstDBData(string author, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("author", author);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate employee name data against DB data", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 26
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line hidden
+#line 27
+ testRunner.Given("I click Employee List tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 28
+ testRunner.Then(string.Format("I search for any value {0}", author), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 29
+ testRunner.Then(string.Format("I validate data displayed against database data {0}", author), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -1,5 +1,14 @@
 {
+  //UI data
   "username": "admin",
   "password": "password",
-  "url": "http://eaapp.somee.com/"
+  "siteurl": "http://eaapp.somee.com/",
+
+  //Server data
+  "serverurl": "http://localhost:3000/",
+
+  //Database data
+  "databaseurl": "SERVER=LAPTOP-8KQ6E2PC\\SQLEXPRESS;",
+  "databasename": "DATABASE=dotnet;",
+  "security": "Integrated security= true"
 }

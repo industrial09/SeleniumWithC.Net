@@ -1,11 +1,13 @@
 ﻿using AutomationWithNETFramework.Hook;
+using AutomationWithNETFramework.Locators;
 using AutomationWithNETFramework.Utilities;
+using AutomationWithNETFramework.Utilities.DBQueries;
+using Newtonsoft.Json;
 using OpenQA.Selenium;
 using RestSharp;
-using RestSharp.Deserializers;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
+using System.Data.SqlClient;
 
 namespace AutomationWithNETFramework.Pages
 {
@@ -13,38 +15,40 @@ namespace AutomationWithNETFramework.Pages
     {
         public DriverHelper Driver;
         public ServerSettings serverSettings;
+        public EmployeeListQueries queries;
+        public EmployeeListLocators locs;
+        public LoginPage loginpage;
+        public DBConexion dbCon;
+
         public EmployeeList(DriverHelper driver, ServerSettings serverSettings) {
             this.Driver = driver;
+            locs = new EmployeeListLocators(Driver);
             this.serverSettings = serverSettings;
+            loginpage = new LoginPage(Driver);
+            dbCon = new DBConexion(Driver);
+        }
+
+        private string letter;
+
+        public string Letter {
+            get { return letter; }
+            set { letter = value; }
         }
 
         public void searchForAValue(string valueToSearchFor) {
-            IWebElement searchTbx = Driver.driver.FindElement(By.Name("searchTerm"));
-            searchTbx.SendKeys(valueToSearchFor);
-            IWebElement searchBtn = Driver.driver.FindElement(By.CssSelector("input[type=submit]"));
-            searchBtn.Click();
+            locs.searchForAnItem(valueToSearchFor);
         }
 
         public bool validateDataDisplayed(string valueToFind)
         {
-            Driver.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-            IWebElement valueExpected = Driver.driver.FindElement(By.XPath("//table/tbody/tr[2]"));
-            bool state = false;
-            string rowText;
-            if (valueExpected.Displayed)
-            {
-                rowText = valueExpected.Text;
-                Console.WriteLine(rowText);
-                if (rowText.Contains(valueToFind)) state = true;
-            }
-            return state;
+            return locs.validateFirstRowUiData(valueToFind);
         }
 
-        public bool validateDataDisplayed()
+        public bool validateGetRequestDataDisplayed(string endpoint, string variableSegment, List<string> keysToValidate)
         {
-            IRestResponse res = getResponseData("posts/{Id}", "1");
-            var author = res.deserializeResponse()["author"];
-            Console.WriteLine("Autohr to be validated is: ");
+            IRestResponse res = getGETResponseData(endpoint, variableSegment);
+            var author = res.deserializeResponse()[keysToValidate[0]];
+            Console.WriteLine("Author to be validated is: "+author);
             Driver.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             IWebElement valueExpected = Driver.driver.FindElement(By.XPath("//table/tbody/tr[2]/td[1]"));
             bool state = false;
@@ -52,8 +56,7 @@ namespace AutomationWithNETFramework.Pages
             if (valueExpected.Displayed)
             {
                 uiAuthor = valueExpected.Text;
-                Console.WriteLine(uiAuthor);
-                if (author.Contains(uiAuthor)) state = true;
+                if (author == uiAuthor) state = true;
             }
             return state;
         }
@@ -75,13 +78,42 @@ namespace AutomationWithNETFramework.Pages
             createBtn.Click();
         }
 
-        public IRestResponse getResponseData(string endpoint, string number) {
-            //string baseUrl = ConfigurationManager.AppSettings["baseUrl"];
-            serverSettings.client = new RestClient("http://localhost:3000/");
+        public IRestResponse getGETResponseData(string endpoint, string number) {
+            var dataFromJsonFile = loginpage.getDataFromJsonFile();
+            var data = JsonConvert.DeserializeObject<ExternalData>(dataFromJsonFile);
+            serverSettings.client = new RestClient(data.serverurl);
             serverSettings.request = new RestRequest(endpoint, Method.GET);
             serverSettings.request.AddUrlSegment("Id", Convert.ToInt32(number));
             var res = serverSettings.client.Execute(serverSettings.request);
             return res;
+        }
+
+        public string getUiAuthorData()
+        {
+            Driver.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            IWebElement valueExpected = Driver.driver.FindElement(By.XPath("//table/tbody/tr[2]/td[1]"));
+            string text="";
+            if (valueExpected.Displayed) text = valueExpected.Text;
+            return text;
+        }
+
+        public SqlDataReader executeDBQuery(string option, string variableVar) {
+            SqlConnection conn = dbCon.connectToDB();
+            queries = new EmployeeListQueries();
+            SqlCommand cmd = new SqlCommand(queries.getQuery(option, variableVar), conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            return reader;
+        }
+
+        public bool validateDBDataAgainstUIData(string queryOption, string variableValue, string dataToCompare) {
+            SqlDataReader data = executeDBQuery(queryOption, variableValue);
+            bool state = false;
+            string author="";
+            while (data.Read()) {
+                author = data[0].ToString();
+            }
+            if(author == dataToCompare) state = true;
+            return state;
         }
     }
 }

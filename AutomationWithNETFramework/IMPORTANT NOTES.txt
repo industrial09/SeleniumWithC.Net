@@ -1,5 +1,24 @@
-﻿AUTOMATION Repo with C# using Selelnium, with Server(RestSharp) and External source (json file, with NewtonSoft)  data
+﻿AUTOMATION Repo with C# using Selenium, with Server(RestSharp) and External source (json file, with NewtonSoft)  data
  
+   ****** JENKINS SETUP ********
+   --- REMEMBER: All of these plugins and dependencies have to be installed locally and added in
+				 Jenkins as well
+	(To install packages locally Chocolatey can be used for both JAVA and .NET apps) https://chocolatey.org/install
+	For installing packages: https://community.chocolatey.org/packages
+MANAGE PLUGINS section:
+ 1. Install MSBuild plugin for compiling .NET project
+
+GLOBAL TOOL CONFIGURATION section:
+ 1. MSBuild.exe path needs to be set (usually installed in C:\Program Files (x86)\Microsoft Visual Studio)
+
+ FREE STYLE PROJECT:
+ MSBuild version: After installing and seting up MSBuild there will one available option
+ MSBuild Build file: It means to solution
+
+ 1. Install Nuget (for dependencies, plugins to be installed) Nuget.CommandLine
+ 2. Install NUnit (for executing tests)
+ 
+
  IMPORTANT NOTES ABOUT WORKING WITH SELENIUM AND C#:
 1) SelectElement class is used for Dropdowns
 2) ExpectedConditions comes from SeleniumExtras.WaitHelpers, when using WebDriverWait.Until(ExpectedConditions)
@@ -19,3 +38,6 @@ https://www.youtube.com/watch?v=UkoS-KpDi2w
 It is better to use ExtentReports plugin!!
 
 For working with JSon files in .NET apps, NewtonSoft plugin can be used
+Useful sites to work with Json data
+https://jsonpathfinder.com/
+https://jsonlint.com/
