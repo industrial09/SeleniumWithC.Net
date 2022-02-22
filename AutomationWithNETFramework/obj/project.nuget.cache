@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YeoFlb+KyNLQHBz9ljBRV3d/7wA0LMCuTrKcYDlev24p2Apgtvz0nRt1eHxsfQ3d9uNbTD7xostX4U2X6RrsIA==",
+  "dgSpecHash": "1j5MhG65BiDmtjEzG7e795zk3J53gmKTVYj/DXeKhSPHsNBrj/azxWRp2n5AGd7vkva/G596Suxl028mxfhC5Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Christian Bautista\\source\\repos\\AutomationWithNETFramework\\AutomationWithNETFramework\\AutomationWithNETFramework.csproj",
   "expectedPackageFiles": [
@@ -72,6 +72,7 @@
     "C:\\Users\\Christian Bautista\\.nuget\\packages\\microsoft.extensions.options\\2.2.0\\microsoft.extensions.options.2.2.0.nupkg.sha512",
     "C:\\Users\\Christian Bautista\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\2.2.0\\microsoft.extensions.options.configurationextensions.2.2.0.nupkg.sha512",
     "C:\\Users\\Christian Bautista\\.nuget\\packages\\microsoft.extensions.primitives\\2.2.0\\microsoft.extensions.primitives.2.2.0.nupkg.sha512",
+    "C:\\Users\\Christian Bautista\\.nuget\\packages\\microsoft.net.compilers\\4.1.0\\microsoft.net.compilers.4.1.0.nupkg.sha512",
     "C:\\Users\\Christian Bautista\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "C:\\Users\\Christian Bautista\\.nuget\\packages\\microsoft.net.test.sdk\\16.9.4\\microsoft.net.test.sdk.16.9.4.nupkg.sha512",
     "C:\\Users\\Christian Bautista\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
