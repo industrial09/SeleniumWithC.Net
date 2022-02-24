@@ -14,6 +14,5 @@ namespace AutomationWithNETFramework.Utilities.DBQueries
                     break;
             }
         }
-        //public static string selectAuthor = "select author from authordata where author = 'Karthik KK'";
     }
 }

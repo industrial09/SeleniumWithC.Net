@@ -14,6 +14,7 @@ GLOBAL TOOL CONFIGURATION section:
  FREE STYLE PROJECT:
  MSBuild version: After installing and seting up MSBuild there will one available option
  MSBuild Build file: It means to solution
+ Note: Take a look at Build step.png file. smtimes 1st step is not needed 
 
  1. Install Nuget (for dependencies, plugins to be installed) Nuget.CommandLine
  2. Install NUnit (for executing tests)

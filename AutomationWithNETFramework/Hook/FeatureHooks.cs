@@ -18,10 +18,16 @@ namespace AutomationWithNETFramework.Hook
         private static ExtentReports extentReports;
         private static ExtentTest featureName;
         private ExtentTest scenario;
+        private ScenarioContext _scenarioContext;
 
         //Appying Context Injection
         static DriverHelper Driver;
-        Featurehooks(DriverHelper driver) => Driver = driver;
+        Featurehooks(DriverHelper driver, ScenarioContext scenarioContext)
+        {
+            Driver = driver;
+            _scenarioContext = scenarioContext;
+        }
+            
 
         [BeforeTestRun]
         public static void beforeTestRun() {
@@ -38,14 +44,14 @@ namespace AutomationWithNETFramework.Hook
         }
 
         [BeforeFeature]
-        public static void beforeFeature()
+        public static void beforeFeature(FeatureContext featureContext)
         {
-            featureName = extentReports.CreateTest<Feature>(FeatureContext.Current.FeatureInfo.Title);
+            featureName = extentReports.CreateTest<Feature>(featureContext.FeatureInfo.Title);
         }
 
         [BeforeScenario]
         public void beforeScenario() {
-            scenario = featureName.CreateNode<Scenario>(ScenarioContext.Current.ScenarioInfo.Title);
+            scenario = featureName.CreateNode<Scenario>(_scenarioContext.ScenarioInfo.Title);
             //string browser = ConfigurationManager.AppSettings["browser"];
             //if (browser == "chrome") {
                 ChromeOptions options = new ChromeOptions();
@@ -62,19 +68,20 @@ namespace AutomationWithNETFramework.Hook
         [AfterStep]
         public void afterStep() {
             //Need to know kind of step
-            var steptype = ScenarioStepContext.Current.StepInfo.StepDefinitionType.ToString();
-            if (ScenarioContext.Current.TestError == null)
+            var steptype = _scenarioContext.StepContext.StepInfo.StepDefinitionType.ToString();
+            //var steptype = ScenarioStepContext.Current.StepInfo.StepDefinitionType.ToString();
+            if (_scenarioContext.TestError == null)
             {
-                if (steptype == "Given") scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text);
-                else if (steptype == "When") scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text);
-                else if (steptype == "Then") scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text);
-                else if (steptype == "And") scenario.CreateNode<And>(ScenarioStepContext.Current.StepInfo.Text);
+                if (steptype == "Given") scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text);
+                else if (steptype == "When") scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text);
+                else if (steptype == "Then") scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text);
+                else if (steptype == "And") scenario.CreateNode<And>(_scenarioContext.StepContext.StepInfo.Text);
             }
             else{
-                if (steptype == "Given") scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message);
-                else if (steptype == "When") scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message);
-                else if (steptype == "Then") scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message);
-                else if (steptype == "And") scenario.CreateNode<And>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message);
+                if (steptype == "Given") scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message);
+                else if (steptype == "When") scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message);
+                else if (steptype == "Then") scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message);
+                else if (steptype == "And") scenario.CreateNode<And>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message);
             }
         }
 

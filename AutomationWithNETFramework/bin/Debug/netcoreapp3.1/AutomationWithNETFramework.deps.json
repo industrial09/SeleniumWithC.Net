@@ -10,7 +10,9 @@
         "dependencies": {
           "DotNetSeleniumExtras.WaitHelpers": "3.11.0",
           "ExtentReports": "4.1.0",
+          "Microsoft.CodeAnalysis.Analyzers": "1.1.0",
           "Microsoft.NET.Test.Sdk": "16.9.4",
+          "Microsoft.Net.Compilers": "4.1.0",
           "NUnit": "3.13.1",
           "NUnit3TestAdapter": "3.17.0",
           "Newtonsoft.Json": "13.0.1",
@@ -912,6 +914,7 @@
           }
         }
       },
+      "Microsoft.Net.Compilers/4.1.0": {},
       "Microsoft.Net.Http.Headers/2.2.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "2.2.0",
@@ -3015,6 +3018,13 @@
       "sha512": "sha512-azyQtqbm4fSaDzZHD/J+V6oWMFaf2tWP4WEGIYePLCMw3+b2RQdj9ybgbQyjCshcitQKQ4lEDOZjmSlTTrHxUg==",
       "path": "microsoft.extensions.primitives/2.2.0",
       "hashPath": "microsoft.extensions.primitives.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.Net.Compilers/4.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0i74u+x+92wSBcdZIDv38OxqDJiPrCPuQow3GZnLq3+1/vWVlsfNe1FOjmytRinj6Ct/2eYG5ygCmUr1/tdunQ==",
+      "path": "microsoft.net.compilers/4.1.0",
+      "hashPath": "microsoft.net.compilers.4.1.0.nupkg.sha512"
     },
     "Microsoft.Net.Http.Headers/2.2.0": {
       "type": "package",

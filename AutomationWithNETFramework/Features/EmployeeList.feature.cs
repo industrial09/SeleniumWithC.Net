@@ -175,7 +175,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validate Checking Activity data")]
-        [NUnit.Framework.TestCaseAttribute("Alexander", "70000", "12", "6", "industrialcool@hotmail.com", null)]
+        [NUnit.Framework.TestCaseAttribute("Alexandere", "70000", "12", "6", "industrialcool@hotmail.com", null)]
         public virtual void ValidateCheckingActivityData(string name, string salary, string durationworked, string grade, string email, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
