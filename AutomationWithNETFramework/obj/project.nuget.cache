@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1j5MhG65BiDmtjEzG7e795zk3J53gmKTVYj/DXeKhSPHsNBrj/azxWRp2n5AGd7vkva/G596Suxl028mxfhC5Q==",
+  "dgSpecHash": "993RjLNDY1CTgbWzlv3KowI7Omu3buyCsq3xjfwn1jnGTsZMH9DKlXGljIk13R2rBBdxWc/xg+3u3uZv+9nUgA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Christian Bautista\\source\\repos\\AutomationWithNETFramework\\AutomationWithNETFramework\\AutomationWithNETFramework.csproj",
   "expectedPackageFiles": [
@@ -114,8 +114,8 @@
     "C:\\Users\\Christian Bautista\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Christian Bautista\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Christian Bautista\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
-    "C:\\Users\\Christian Bautista\\.nuget\\packages\\selenium.support\\4.1.0\\selenium.support.4.1.0.nupkg.sha512",
-    "C:\\Users\\Christian Bautista\\.nuget\\packages\\selenium.webdriver\\4.1.0\\selenium.webdriver.4.1.0.nupkg.sha512",
+    "C:\\Users\\Christian Bautista\\.nuget\\packages\\selenium.support\\3.10.0\\selenium.support.3.10.0.nupkg.sha512",
+    "C:\\Users\\Christian Bautista\\.nuget\\packages\\selenium.webdriver\\3.11.0\\selenium.webdriver.3.11.0.nupkg.sha512",
     "C:\\Users\\Christian Bautista\\.nuget\\packages\\sharpcompress\\0.23.0\\sharpcompress.0.23.0.nupkg.sha512",
     "C:\\Users\\Christian Bautista\\.nuget\\packages\\sharpziplib\\1.3.3\\sharpziplib.1.3.3.nupkg.sha512",
     "C:\\Users\\Christian Bautista\\.nuget\\packages\\specflow\\3.9.40\\specflow.3.9.40.nupkg.sha512",

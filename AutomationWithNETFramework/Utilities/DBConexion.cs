@@ -9,13 +9,10 @@ namespace AutomationWithNETFramework.Utilities
 {
     public class DBConexion
     {
-        public DBConexion(DriverHelper driver) {
-            Driver = driver;
-            lp = new LoginPage(Driver);
-        }
-
         LoginPage lp;
-        DriverHelper Driver;
+        public DBConexion() {
+            lp = new LoginPage();
+        }
 
 
         public SqlConnection connectToDB() {

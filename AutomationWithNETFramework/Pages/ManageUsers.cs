@@ -9,7 +9,7 @@ namespace AutomationWithNETFramework.Pages
 {
     public  class ManageUsers
     {
-        DriverHelper Driver;
+        /*DriverHelper Driver;
         public ManageUsers(DriverHelper driver) => this.Driver = driver;
 
         public void assignRoleToAUser(string userToAssingARole, string roleToBeAssigned) {
@@ -29,6 +29,6 @@ namespace AutomationWithNETFramework.Pages
                     }
                 } 
             }
-        }
+        }*/
     }
 }

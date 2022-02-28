@@ -5,7 +5,7 @@ using TechTalk.SpecFlow;
 
 [Binding]
 public class ManageUsersStepDefs {
-    DriverHelper Driver;
+    /*DriverHelper Driver;
     HomePage homepage;
     ManageUsers manageusers;
 
@@ -26,5 +26,5 @@ public class ManageUsersStepDefs {
     public void ThenIAssignARoleForEmployee(string role, string employeeName)
     {
         manageusers.assignRoleToAUser(employeeName, role);
-    }
+    }*/
 }

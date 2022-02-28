@@ -6,20 +6,20 @@ using OpenQA.Selenium.Chrome;
 
 namespace AutomationWithNETFramework
 {   
-    [TestFixture]
+    /*[TestFixture]
     public class Tests: DriverHelper
     {
         [SetUp]
         public void setup() {
-            driver = new ChromeDriver();
-            driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl("http://zero.webappsecurity.com/");
+            Driver = new ChromeDriver();
+            Driver.Manage().Window.Maximize();
+            Driver.Navigate().GoToUrl("http://zero.webappsecurity.com/");
             /*LandingPage.clickLoginLink();
             LoginPage.enterUsername("username");
             LoginPage.enterPassword("password");
             LoginPage.clickKeepMeSignedIn();
             LoginPage.clicksignInBtn();
-            HandleInsecurePage.clickUnsafeProceedToPage();*/
+            HandleInsecurePage.clickUnsafeProceedToPage();
         }
 
         [Test]
@@ -28,7 +28,7 @@ namespace AutomationWithNETFramework
             /*AccountSummary.clickAccountActivityTab();
             AccountActivity.selectAccountType("Loan");
             //Look for NUnit Docs https://docs.nunit.org/2.6.4/assertions.html
-            Assert.That(AccountActivity.validateDataDisplayed("RENT"), Is.True);*/
+            Assert.That(AccountActivity.validateDataDisplayed("RENT"), Is.True);
         }
 
         /*[Test]
@@ -51,6 +51,6 @@ namespace AutomationWithNETFramework
         [TearDown]
         public void close() {
             LandingPage.closeBrowser();
-        }*/
-    }
+        }
+    }*/
 }

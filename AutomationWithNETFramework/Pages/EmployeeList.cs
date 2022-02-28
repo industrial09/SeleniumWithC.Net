@@ -13,21 +13,25 @@ namespace AutomationWithNETFramework.Pages
 {
     public class EmployeeList
     {
-        public DriverHelper Driver;
+        //public DriverHelper Driver;
         public ServerSettings serverSettings;
         public EmployeeListQueries queries;
-        public EmployeeListLocators locs;
         public LoginPage loginpage;
+        //public EmployeeListLocators locs;
+
+        //LoginPage loginpage = new LoginPage();
         public DBConexion dbCon;
 
-        public EmployeeList(DriverHelper driver, ServerSettings serverSettings) {
-            this.Driver = driver;
-            locs = new EmployeeListLocators(Driver);
+        public EmployeeList(ServerSettings serverSettings) {
+            //this.Driver = driver;
+            //locs = new EmployeeListLocators();
             this.serverSettings = serverSettings;
-            loginpage = new LoginPage(Driver);
-            dbCon = new DBConexion(Driver);
+            loginpage = new LoginPage();
+            dbCon = new DBConexion();
         }
 
+        static IWebElement valueExpected = DriverHelper.Driver.FindElement(By.XPath("//table/tbody/tr[2]/td[1]"));
+        //public EmployeeListLocators locs = new EmployeeListLocators();
         private string letter;
 
         public string Letter {
@@ -36,12 +40,12 @@ namespace AutomationWithNETFramework.Pages
         }
 
         public void searchForAValue(string valueToSearchFor) {
-            locs.searchForAnItem(valueToSearchFor);
+            EmployeeListLocators.searchForAnItem(valueToSearchFor);
         }
 
         public bool validateDataDisplayed(string valueToFind)
         {
-            return locs.validateFirstRowUiData(valueToFind);
+            return EmployeeListLocators.validateFirstRowUiData(valueToFind);
         }
 
         public bool validateGetRequestDataDisplayed(string endpoint, string variableSegment, List<string> keysToValidate)
@@ -49,8 +53,7 @@ namespace AutomationWithNETFramework.Pages
             IRestResponse res = getGETResponseData(endpoint, variableSegment);
             var author = res.deserializeResponse()[keysToValidate[0]];
             Console.WriteLine("Author to be validated is: "+author);
-            Driver.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-            IWebElement valueExpected = Driver.driver.FindElement(By.XPath("//table/tbody/tr[2]/td[1]"));
+            DriverHelper.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             bool state = false;
             string uiAuthor;
             if (valueExpected.Displayed)
@@ -62,19 +65,19 @@ namespace AutomationWithNETFramework.Pages
         }
 
         public void createANewEmployee(string name, string salary, string durationWorked, string grade, string email) {
-            IWebElement createNewBtn = Driver.driver.FindElement(By.XPath("//*[contains(text(), 'Create New')]"));
+            IWebElement createNewBtn = DriverHelper.Driver.FindElement(By.XPath("//*[contains(text(), 'Create New')]"));
             createNewBtn.Click();
-            IWebElement nameTbx = Driver.driver.FindElement(By.Id("Name"));
+            IWebElement nameTbx = DriverHelper.Driver.FindElement(By.Id("Name"));
             nameTbx.SendKeys(name);
-            IWebElement salaryTbx = Driver.driver.FindElement(By.Id("Salary"));
+            IWebElement salaryTbx = DriverHelper.Driver.FindElement(By.Id("Salary"));
             salaryTbx.SendKeys(salary);
-            IWebElement durationWorkedTbx = Driver.driver.FindElement(By.Id("DurationWorked"));
+            IWebElement durationWorkedTbx = DriverHelper.Driver.FindElement(By.Id("DurationWorked"));
             durationWorkedTbx.SendKeys(durationWorked);
-            IWebElement gradeTbx = Driver.driver.FindElement(By.Id("Grade"));
+            IWebElement gradeTbx = DriverHelper.Driver.FindElement(By.Id("Grade"));
             gradeTbx.SendKeys(grade);
-            IWebElement emailTbx = Driver.driver.FindElement(By.Id("Email"));
+            IWebElement emailTbx = DriverHelper.Driver.FindElement(By.Id("Email"));
             emailTbx.SendKeys(email);
-            IWebElement createBtn = Driver.driver.FindElement(By.CssSelector("input[value='Create']"));
+            IWebElement createBtn = DriverHelper.Driver.FindElement(By.CssSelector("input[value='Create']"));
             createBtn.Click();
         }
 
@@ -90,8 +93,8 @@ namespace AutomationWithNETFramework.Pages
 
         public string getUiAuthorData()
         {
-            Driver.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-            IWebElement valueExpected = Driver.driver.FindElement(By.XPath("//table/tbody/tr[2]/td[1]"));
+            DriverHelper.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            //IWebElement valueExpected = DriverHelper.Driver.FindElement(By.XPath("//table/tbody/tr[2]/td[1]"));
             string text="";
             if (valueExpected.Displayed) text = valueExpected.Text;
             return text;

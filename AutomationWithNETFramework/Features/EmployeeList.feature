@@ -15,13 +15,13 @@ Scenario: Validate employee name data against server data
 	Then I search for a value "Karthik"
 	Then I validate data displayed against server data
 
-Scenario Outline: Validate Checking Activity data
+Scenario Outline: Validate employee creation
 	Given I click Employee List tab
 	When I create a new employee with <name>, <salary>, <durationworked>, <grade>, <email>
 	Then I validate new employee has been added as <name>
 Examples: 
 	| name      | salary | durationworked | grade | email                      |
-	| Alexandere | 70000  | 12             | 6     | industrialcool@hotmail.com |
+	| Test3 | 70000  | 12             | 6     | industrialcool@hotmail.com |
 
 Scenario Outline: Validate employee name data against DB data
 	Given I click Employee List tab

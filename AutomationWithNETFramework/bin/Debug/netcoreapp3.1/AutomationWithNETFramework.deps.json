@@ -18,8 +18,8 @@
           "Newtonsoft.Json": "13.0.1",
           "Pickles": "2.5.0",
           "RestSharp": "106.5.4",
-          "Selenium.Support": "4.1.0",
-          "Selenium.WebDriver": "4.1.0",
+          "Selenium.Support": "3.10.0",
+          "Selenium.WebDriver": "3.11.0",
           "SpecFlow": "3.9.40",
           "SpecFlow.NUnit": "3.9.40",
           "SpecFlow.Tools.MsBuild.Generation": "3.9.40",
@@ -65,7 +65,7 @@
       },
       "DotNetSeleniumExtras.WaitHelpers/3.11.0": {
         "dependencies": {
-          "Selenium.WebDriver": "4.1.0"
+          "Selenium.WebDriver": "3.11.0"
         },
         "runtime": {
           "lib/netstandard2.0/SeleniumExtras.WaitHelpers.dll": {
@@ -1433,25 +1433,25 @@
           }
         }
       },
-      "Selenium.Support/4.1.0": {
+      "Selenium.Support/3.10.0": {
         "dependencies": {
-          "Selenium.WebDriver": "4.1.0"
+          "Selenium.WebDriver": "3.11.0"
         },
         "runtime": {
-          "lib/netstandard2.1/WebDriver.Support.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.0.0.0"
+          "lib/netstandard2.0/WebDriver.Support.dll": {
+            "assemblyVersion": "3.10.0.0",
+            "fileVersion": "3.10.0.0"
           }
         }
       },
-      "Selenium.WebDriver/4.1.0": {
+      "Selenium.WebDriver/3.11.0": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
-          "lib/netstandard2.1/WebDriver.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.0.0.0"
+          "lib/netstandard2.0/WebDriver.dll": {
+            "assemblyVersion": "3.11.0.0",
+            "fileVersion": "3.11.0.0"
           }
         }
       },
@@ -3313,19 +3313,19 @@
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
     },
-    "Selenium.Support/4.1.0": {
+    "Selenium.Support/3.10.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wuK5cfgVaimOZqyuriY2geGpNsI9DWky8CuBlrkBnmebkSrRftxqwyUVy0NLooHaAB2iaMj7qM+VOdUEX5bCHQ==",
-      "path": "selenium.support/4.1.0",
-      "hashPath": "selenium.support.4.1.0.nupkg.sha512"
+      "sha512": "sha512-SBvxtTqHP33LEtZX3saKUrZpEW6NWESiqqX405Gj0x5CyZen4wEx8bM3VikTkic49RH/PRdW7+Q5bLIZj7fyTg==",
+      "path": "selenium.support/3.10.0",
+      "hashPath": "selenium.support.3.10.0.nupkg.sha512"
     },
-    "Selenium.WebDriver/4.1.0": {
+    "Selenium.WebDriver/3.11.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-d4smisz4a/wJCM2TzkKTl+BLfvZUTvaobhKElDfCVZlvY8ThsC8VAoBNWTlg1H/GGzIP//yVGko/W0FILTgkYA==",
-      "path": "selenium.webdriver/4.1.0",
-      "hashPath": "selenium.webdriver.4.1.0.nupkg.sha512"
+      "sha512": "sha512-t7nq/oQbAdktyTq1ZgPjTJEGkgit161x4mla9FmBPp7j8HhzGE30w3rnS23JLW7/qtcaouv7VqDDuqB7ljM19Q==",
+      "path": "selenium.webdriver/3.11.0",
+      "hashPath": "selenium.webdriver.3.11.0.nupkg.sha512"
     },
     "SharpCompress/0.23.0": {
       "type": "package",

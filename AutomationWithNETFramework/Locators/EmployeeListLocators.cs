@@ -8,21 +8,22 @@ namespace AutomationWithNETFramework.Locators
 {
     public class EmployeeListLocators
     {
-        public DriverHelper Driver;
-        public EmployeeListLocators(DriverHelper driver) => Driver = driver;
+        //public DriverHelper Driver;
+        //public EmployeeListLocators(DriverHelper driver) => Driver = driver;
 
-        public void searchForAnItem(string valueToEnter) {
-            IWebElement searchTbx = Driver.driver.FindElement(By.Name("searchTerm"));
+        static IWebElement searchTbx = DriverHelper.Driver.FindElement(By.Name("searchTerm"));
+        static IWebElement searchBtn = DriverHelper.Driver.FindElement(By.CssSelector("input[type=submit]"));
+
+        public static void searchForAnItem(string valueToEnter) {
             searchTbx.SendKeys(valueToEnter);
-            IWebElement searchBtn = Driver.driver.FindElement(By.CssSelector("input[type=submit]"));
             searchBtn.Click();
         }
 
-        public bool validateFirstRowUiData(string valueToFind) {
-            Driver.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-            IWebElement valueExpected = Driver.driver.FindElement(By.XPath("//table/tbody/tr[2]/td[1]"));
+        public static bool validateFirstRowUiData(string valueToFind) {
+            DriverHelper.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             bool state = false;
             string rowText;
+            IWebElement valueExpected = DriverHelper.Driver.FindElement(By.XPath("//table/tbody/tr[2]/td[1]"));
             if (valueExpected.Displayed)
             {
                 rowText = valueExpected.Text;

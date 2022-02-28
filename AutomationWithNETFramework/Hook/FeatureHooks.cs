@@ -21,10 +21,10 @@ namespace AutomationWithNETFramework.Hook
         private ScenarioContext _scenarioContext;
 
         //Appying Context Injection
-        static DriverHelper Driver;
-        Featurehooks(DriverHelper driver, ScenarioContext scenarioContext)
+        //static DriverHelper Driver;
+        Featurehooks(ScenarioContext scenarioContext)
         {
-            Driver = driver;
+            //Driver = driver;
             _scenarioContext = scenarioContext;
         }
             
@@ -59,7 +59,7 @@ namespace AutomationWithNETFramework.Hook
                 options.AddArguments("start-maximized");
                 //options.AddArguments("--headless");
                 new DriverManager().SetUpDriver(new ChromeConfig());
-                Driver.driver = new ChromeDriver(options);
+                DriverHelper.Driver = new ChromeDriver(options);
             //}
             //else if(browser == "firefox") Driver.driver = new FirefoxDriver();
 
@@ -88,7 +88,7 @@ namespace AutomationWithNETFramework.Hook
         [AfterScenario]
         public static void afterScenario()
         {
-            Driver.driver.Quit();
+            DriverHelper.Driver.Quit();
         }
     }
 }

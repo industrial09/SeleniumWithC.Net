@@ -12,17 +12,17 @@ namespace AutomationWithNETFramework.TestSteps
     [Binding]
     public class CommomStepDefinitions
     {
-        DriverHelper Driver;
+        //DriverHelper Driver;
         LandingPage landingpage;
         LoginPage loginpage;
-        ExternalData data;
+        //ExternalData data;
 
         //Appying Context Injection
-        CommomStepDefinitions(DriverHelper driver)
+        CommomStepDefinitions()
         {
-            Driver = driver;
-            landingpage = new LandingPage(Driver);
-            loginpage = new LoginPage(Driver);
+            //Driver = driver;
+            landingpage = new LandingPage();
+            loginpage = new LoginPage();
         }
 
         [Given(@"I navigate to Landing page")]
@@ -30,7 +30,7 @@ namespace AutomationWithNETFramework.TestSteps
         {
             var dataFromJsonFile = loginpage.getDataFromJsonFile();
             var data = JsonConvert.DeserializeObject<ExternalData>(dataFromJsonFile);
-            Driver.driver.Navigate().GoToUrl(data.siteurl);
+            DriverHelper.Driver.Navigate().GoToUrl(data.siteurl);
         }
 
         [When(@"I login to site")]

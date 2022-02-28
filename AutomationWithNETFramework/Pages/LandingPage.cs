@@ -11,15 +11,15 @@ namespace AutomationWithNETFramework.Pages
 {
     public class LandingPage
     {
-        DriverHelper Driver;
+        //DriverHelper Driver;
 
-        public LandingPage(DriverHelper driver)
+        /*public LandingPage(DriverHelper driver)
         {
             this.Driver = driver;
-        }
+        }*/
 
         public void clickLoginLink() {
-            IWebElement el = Driver.driver.FindElement(By.Id("loginLink"));
+            IWebElement el = DriverHelper.Driver.FindElement(By.Id("loginLink"));
             el.Click();
             Thread.Sleep(2000);
         } 

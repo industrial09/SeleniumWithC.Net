@@ -174,9 +174,9 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Validate Checking Activity data")]
-        [NUnit.Framework.TestCaseAttribute("Alexandere", "70000", "12", "6", "industrialcool@hotmail.com", null)]
-        public virtual void ValidateCheckingActivityData(string name, string salary, string durationworked, string grade, string email, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Validate employee creation")]
+        [NUnit.Framework.TestCaseAttribute("Test3", "70000", "12", "6", "industrialcool@hotmail.com", null)]
+        public virtual void ValidateEmployeeCreation(string name, string salary, string durationworked, string grade, string email, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -185,7 +185,7 @@ this.FeatureBackground();
             argumentsOfScenario.Add("durationworked", durationworked);
             argumentsOfScenario.Add("grade", grade);
             argumentsOfScenario.Add("email", email);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Checking Activity data", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate employee creation", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 18
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

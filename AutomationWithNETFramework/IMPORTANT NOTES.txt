@@ -19,7 +19,6 @@ GLOBAL TOOL CONFIGURATION section:
  1. Install Nuget (for dependencies, plugins to be installed) Nuget.CommandLine
  2. Install NUnit (for executing tests)
  
-
  IMPORTANT NOTES ABOUT WORKING WITH SELENIUM AND C#:
 1) SelectElement class is used for Dropdowns
 2) ExpectedConditions comes from SeleniumExtras.WaitHelpers, when using WebDriverWait.Until(ExpectedConditions)

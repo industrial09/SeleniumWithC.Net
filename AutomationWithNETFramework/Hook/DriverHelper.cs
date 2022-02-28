@@ -7,8 +7,11 @@ using System.Text;
 
 namespace AutomationWithNETFramework.Hook
 {
-    public class DriverHelper
+    public static class DriverHelper
     {
-        public IWebDriver driver { get; set; }
+        //public IWebDriver driver { get; set; }
+        private static IWebDriver driver;
+
+        public static IWebDriver Driver { get => driver; set => driver = value; }
     }
 }

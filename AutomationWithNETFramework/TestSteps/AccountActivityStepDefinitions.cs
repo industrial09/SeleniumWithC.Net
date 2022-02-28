@@ -11,24 +11,23 @@ namespace AutomationWithNETFramework
     [Binding]
     public class AccountActivityStepDefinitions
     {
-        DriverHelper Driver;
+        //DriverHelper Driver;
         LandingPage landingpage;
         LoginPage loginpage;
         HomePage homepage;
-        EmployeeListLocators locs;
+        //EmployeeListLocators locs;
         EmployeeList employeeList;
         ServerSettings ServerSettings;
 
         string valueGottenFromUI;
 
         //Appying Context Injection
-        AccountActivityStepDefinitions(DriverHelper driver, ServerSettings serverSettings) { 
-            Driver = driver;
+        AccountActivityStepDefinitions(ServerSettings serverSettings) {
             this.ServerSettings = serverSettings;
-            landingpage = new LandingPage(Driver);
-            loginpage = new LoginPage(Driver);
-            homepage = new HomePage(Driver);
-            employeeList = new EmployeeList(Driver, ServerSettings);
+            landingpage = new LandingPage();
+            loginpage = new LoginPage();
+            homepage = new HomePage();
+            employeeList = new EmployeeList(ServerSettings);
         }
 
         [Given(@"I click Employee List tab")]
