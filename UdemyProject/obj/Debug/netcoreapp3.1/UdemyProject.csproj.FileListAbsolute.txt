@@ -1,0 +1,10 @@
+C:\Users\Christian Bautista\OneDrive - Cox Automotive\Documents\nagarro\RestSharp and RestAssured\SeleniumWithSharpNet\UdemyProject\bin\Debug\netcoreapp3.1\UdemyProject.deps.json
+C:\Users\Christian Bautista\OneDrive - Cox Automotive\Documents\nagarro\RestSharp and RestAssured\SeleniumWithSharpNet\UdemyProject\bin\Debug\netcoreapp3.1\UdemyProject.dll
+C:\Users\Christian Bautista\OneDrive - Cox Automotive\Documents\nagarro\RestSharp and RestAssured\SeleniumWithSharpNet\UdemyProject\bin\Debug\netcoreapp3.1\UdemyProject.pdb
+C:\Users\Christian Bautista\OneDrive - Cox Automotive\Documents\nagarro\RestSharp and RestAssured\SeleniumWithSharpNet\UdemyProject\obj\Debug\netcoreapp3.1\UdemyProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Christian Bautista\OneDrive - Cox Automotive\Documents\nagarro\RestSharp and RestAssured\SeleniumWithSharpNet\UdemyProject\obj\Debug\netcoreapp3.1\UdemyProject.AssemblyInfoInputs.cache
+C:\Users\Christian Bautista\OneDrive - Cox Automotive\Documents\nagarro\RestSharp and RestAssured\SeleniumWithSharpNet\UdemyProject\obj\Debug\netcoreapp3.1\UdemyProject.AssemblyInfo.cs
+C:\Users\Christian Bautista\OneDrive - Cox Automotive\Documents\nagarro\RestSharp and RestAssured\SeleniumWithSharpNet\UdemyProject\obj\Debug\netcoreapp3.1\UdemyProject.csproj.CoreCompileInputs.cache
+C:\Users\Christian Bautista\OneDrive - Cox Automotive\Documents\nagarro\RestSharp and RestAssured\SeleniumWithSharpNet\UdemyProject\obj\Debug\netcoreapp3.1\UdemyProject.dll
+C:\Users\Christian Bautista\OneDrive - Cox Automotive\Documents\nagarro\RestSharp and RestAssured\SeleniumWithSharpNet\UdemyProject\obj\Debug\netcoreapp3.1\UdemyProject.pdb
+C:\Users\Christian Bautista\OneDrive - Cox Automotive\Documents\nagarro\RestSharp and RestAssured\SeleniumWithSharpNet\UdemyProject\obj\Debug\netcoreapp3.1\UdemyProject.csproj.AssemblyReference.cache

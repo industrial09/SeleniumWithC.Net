@@ -1,6 +1,7 @@
 ﻿using AutomationWithNETFramework.Hook;
 using OpenQA.Selenium;
 using System;
+using UdemyProject.Base;
 
 namespace AutomationWithNETFramework.Pages
 {
@@ -14,13 +15,13 @@ namespace AutomationWithNETFramework.Pages
  
         public void clickEmployeeListTab()
         {
-            DriverHelper.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-            IWebElement accountActivityTab = DriverHelper.Driver.FindElement(By.XPath("//a[contains(text(),'Employee List')]"));
+            DriverContext.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            IWebElement accountActivityTab = DriverContext.Driver.FindElement(By.XPath("//a[contains(text(),'Employee List')]"));
             accountActivityTab.Click();
         }
 
         public void clickManageUsersTab() {
-            IWebElement manageUsersTab = DriverHelper.Driver.FindElement(By.XPath("//a[contains(text(),'Manage Users')]"));
+            IWebElement manageUsersTab = DriverContext.Driver.FindElement(By.XPath("//a[contains(text(),'Manage Users')]"));
             manageUsersTab.Click();
         } 
     }

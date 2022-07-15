@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using UdemyProject.Base;
 
 namespace AutomationWithNETFramework.Pages
 {
@@ -18,8 +19,9 @@ namespace AutomationWithNETFramework.Pages
             this.Driver = driver;
         }*/
 
+
         public void clickLoginLink() {
-            IWebElement el = DriverHelper.Driver.FindElement(By.Id("loginLink"));
+            IWebElement el = DriverContext.Driver.FindElement(By.Id("loginLink"));
             el.Click();
             Thread.Sleep(2000);
         } 

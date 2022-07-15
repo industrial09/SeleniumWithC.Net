@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using TechTalk.SpecFlow;
+using UdemyProject.Base;
 
 namespace AutomationWithNETFramework.TestSteps
 {
@@ -30,7 +31,8 @@ namespace AutomationWithNETFramework.TestSteps
         {
             var dataFromJsonFile = loginpage.getDataFromJsonFile();
             var data = JsonConvert.DeserializeObject<ExternalData>(dataFromJsonFile);
-            DriverHelper.Driver.Navigate().GoToUrl(data.siteurl);
+            DriverContext.Browser.GoToUrl(data.siteurl);
+            //DriverHelper.Driver.Navigate().GoToUrl(data.siteurl);
         }
 
         [When(@"I login to site")]

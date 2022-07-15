@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "oKzMaIf4zjqBrOdHxldzHn6k7M/nWFreG9aoorx8Hz0sL4RDjxG0lEd1lNgTaKXxZKCq1ZoHxJShDp70AHmTVA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Christian Bautista\\OneDrive - Cox Automotive\\Documents\\nagarro\\RestSharp and RestAssured\\SeleniumWithSharpNet\\UdemyProject\\UdemyProject.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Christian Bautista\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.0\\microsoft.extensions.configuration.3.1.0.nupkg.sha512",
+    "C:\\Users\\Christian Bautista\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Christian Bautista\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.0\\microsoft.extensions.configuration.binder.3.1.0.nupkg.sha512",
+    "C:\\Users\\Christian Bautista\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\3.1.0\\microsoft.extensions.configuration.fileextensions.3.1.0.nupkg.sha512",
+    "C:\\Users\\Christian Bautista\\.nuget\\packages\\microsoft.extensions.configuration.json\\3.1.0\\microsoft.extensions.configuration.json.3.1.0.nupkg.sha512",
+    "C:\\Users\\Christian Bautista\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\3.1.0\\microsoft.extensions.fileproviders.abstractions.3.1.0.nupkg.sha512",
+    "C:\\Users\\Christian Bautista\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\3.1.0\\microsoft.extensions.fileproviders.physical.3.1.0.nupkg.sha512",
+    "C:\\Users\\Christian Bautista\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\3.1.0\\microsoft.extensions.filesystemglobbing.3.1.0.nupkg.sha512",
+    "C:\\Users\\Christian Bautista\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\Christian Bautista\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Christian Bautista\\.nuget\\packages\\restsharp\\106.5.4\\restsharp.106.5.4.nupkg.sha512",
+    "C:\\Users\\Christian Bautista\\.nuget\\packages\\selenium.webdriver\\4.3.0\\selenium.webdriver.4.3.0.nupkg.sha512",
+    "C:\\Users\\Christian Bautista\\.nuget\\packages\\system.configuration.configurationmanager\\4.4.0\\system.configuration.configurationmanager.4.4.0.nupkg.sha512",
+    "C:\\Users\\Christian Bautista\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\Christian Bautista\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.4.0\\system.security.cryptography.protecteddata.4.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}

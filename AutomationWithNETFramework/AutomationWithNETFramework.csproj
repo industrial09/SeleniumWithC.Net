@@ -22,7 +22,7 @@
     <PackageReference Include="Pickles" Version="2.5.0" />
     <PackageReference Include="RestSharp" Version="106.5.4" />
     <PackageReference Include="Selenium.Support" Version="3.10.0" />
-    <PackageReference Include="Selenium.WebDriver" Version="3.11.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="4.3.0" />
     <PackageReference Include="SpecFlow" Version="3.9.40" />
     <PackageReference Include="SpecFlow.NUnit" Version="3.9.40" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.9.40" />
@@ -32,6 +32,10 @@
 
   <ItemGroup>
     <Folder Include="Features\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UdemyProject\UdemyProject.csproj" />
   </ItemGroup>
 
 </Project>

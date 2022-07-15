@@ -8,6 +8,8 @@ using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using UdemyProject.Base;
+using UdemyProject.Extensions;
 
 namespace AutomationWithNETFramework.Pages
 {
@@ -30,8 +32,7 @@ namespace AutomationWithNETFramework.Pages
             dbCon = new DBConexion();
         }
 
-        static IWebElement valueExpected = DriverHelper.Driver.FindElement(By.XPath("//table/tbody/tr[2]/td[1]"));
-        //public EmployeeListLocators locs = new EmployeeListLocators();
+        static IWebElement valueExpected = DriverContext.Driver.FindElement(By.XPath("//table/tbody/tr[2]/td[1]"));
         private string letter;
 
         public string Letter {
@@ -53,7 +54,7 @@ namespace AutomationWithNETFramework.Pages
             IRestResponse res = getGETResponseData(endpoint, variableSegment);
             var author = res.deserializeResponse()[keysToValidate[0]];
             Console.WriteLine("Author to be validated is: "+author);
-            DriverHelper.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            DriverContext.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             bool state = false;
             string uiAuthor;
             if (valueExpected.Displayed)
@@ -65,19 +66,19 @@ namespace AutomationWithNETFramework.Pages
         }
 
         public void createANewEmployee(string name, string salary, string durationWorked, string grade, string email) {
-            IWebElement createNewBtn = DriverHelper.Driver.FindElement(By.XPath("//*[contains(text(), 'Create New')]"));
+            IWebElement createNewBtn = DriverContext.Driver.FindElement(By.XPath("//*[contains(text(), 'Create New')]"));
             createNewBtn.Click();
-            IWebElement nameTbx = DriverHelper.Driver.FindElement(By.Id("Name"));
+            IWebElement nameTbx = DriverContext.Driver.FindElement(By.Id("Name"));
             nameTbx.SendKeys(name);
-            IWebElement salaryTbx = DriverHelper.Driver.FindElement(By.Id("Salary"));
+            IWebElement salaryTbx = DriverContext.Driver.FindElement(By.Id("Salary"));
             salaryTbx.SendKeys(salary);
-            IWebElement durationWorkedTbx = DriverHelper.Driver.FindElement(By.Id("DurationWorked"));
+            IWebElement durationWorkedTbx = DriverContext.Driver.FindElement(By.Id("DurationWorked"));
             durationWorkedTbx.SendKeys(durationWorked);
-            IWebElement gradeTbx = DriverHelper.Driver.FindElement(By.Id("Grade"));
+            IWebElement gradeTbx = DriverContext.Driver.FindElement(By.Id("Grade"));
             gradeTbx.SendKeys(grade);
-            IWebElement emailTbx = DriverHelper.Driver.FindElement(By.Id("Email"));
+            IWebElement emailTbx = DriverContext.Driver.FindElement(By.Id("Email"));
             emailTbx.SendKeys(email);
-            IWebElement createBtn = DriverHelper.Driver.FindElement(By.CssSelector("input[value='Create']"));
+            IWebElement createBtn = DriverContext.Driver.FindElement(By.CssSelector("input[value='Create']"));
             createBtn.Click();
         }
 
@@ -87,13 +88,14 @@ namespace AutomationWithNETFramework.Pages
             serverSettings.client = new RestClient(data.serverurl);
             serverSettings.request = new RestRequest(endpoint, Method.GET);
             serverSettings.request.AddUrlSegment("Id", Convert.ToInt32(number));
-            var res = serverSettings.client.Execute(serverSettings.request);
-            return res;
+            var res1 = serverSettings.client.ExecuteAsyncRequest<Data>(serverSettings.request).GetAwaiter().GetResult();
+            //var res = serverSettings.client.Execute(serverSettings.request);
+            return res1;
         }
 
         public string getUiAuthorData()
         {
-            DriverHelper.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            DriverContext.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             //IWebElement valueExpected = DriverHelper.Driver.FindElement(By.XPath("//table/tbody/tr[2]/td[1]"));
             string text="";
             if (valueExpected.Displayed) text = valueExpected.Text;

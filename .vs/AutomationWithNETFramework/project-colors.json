@@ -15,7 +15,12 @@
       "ProjectGuid": "63fece9a-7a5b-435f-9e5f-1c8727696054",
       "DisplayName": "Solution Items",
       "ColorIndex": 1
+    },
+    "5a2ac358-91f6-4394-bd56-b79014506bc8": {
+      "ProjectGuid": "5a2ac358-91f6-4394-bd56-b79014506bc8",
+      "DisplayName": "UdemyProject",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }

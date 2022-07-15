@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using UdemyProject.Base;
 
 namespace AutomationWithNETFramework.Pages
 {
@@ -17,20 +18,20 @@ namespace AutomationWithNETFramework.Pages
         }*/
 
         public void enterUsername(string user) {
-            IWebElement loginTxtbox = DriverHelper.Driver.FindElement(By.Id("UserName"));
+            IWebElement loginTxtbox = DriverContext.Driver.FindElement(By.Id("UserName"));
             loginTxtbox.SendKeys(user);
         }
         public void enterPassword(string pswd) {
-            IWebElement passwordTxtbox = DriverHelper.Driver.FindElement(By.Id("Password"));
+            IWebElement passwordTxtbox = DriverContext.Driver.FindElement(By.Id("Password"));
             passwordTxtbox.SendKeys(pswd);
         }
 
         public void clickRememberMeChkBox() {
-            IWebElement RememberMeChkbox = DriverHelper.Driver.FindElement(By.Id("RememberMe"));
+            IWebElement RememberMeChkbox = DriverContext.Driver.FindElement(By.Id("RememberMe"));
             RememberMeChkbox.Click();
         }
         public void clicksignInBtn() {
-            IWebElement signInBtn = DriverHelper.Driver.FindElement(By.CssSelector("input[type=submit]"));
+            IWebElement signInBtn = DriverContext.Driver.FindElement(By.CssSelector("input[type=submit]"));
             signInBtn.Click();
         }
 

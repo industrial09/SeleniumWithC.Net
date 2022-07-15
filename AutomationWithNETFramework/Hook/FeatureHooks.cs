@@ -7,13 +7,14 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using System.Configuration;
 using TechTalk.SpecFlow;
+using UdemyProject.Base;
 using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 
 namespace AutomationWithNETFramework.Hook
 {
     [Binding]
-    public class Featurehooks
+    public class Featurehooks : TestInitializeHook
     {
         private static ExtentReports extentReports;
         private static ExtentTest featureName;
@@ -52,17 +53,7 @@ namespace AutomationWithNETFramework.Hook
         [BeforeScenario]
         public void beforeScenario() {
             scenario = featureName.CreateNode<Scenario>(_scenarioContext.ScenarioInfo.Title);
-            //string browser = ConfigurationManager.AppSettings["browser"];
-            //if (browser == "chrome") {
-                ChromeOptions options = new ChromeOptions();
-                options.AcceptInsecureCertificates = true;
-                options.AddArguments("start-maximized");
-                //options.AddArguments("--headless");
-                new DriverManager().SetUpDriver(new ChromeConfig());
-                DriverHelper.Driver = new ChromeDriver(options);
-            //}
-            //else if(browser == "firefox") Driver.driver = new FirefoxDriver();
-
+            InitializeSettings();
         }
 
         [AfterStep]
@@ -88,7 +79,7 @@ namespace AutomationWithNETFramework.Hook
         [AfterScenario]
         public static void afterScenario()
         {
-            DriverHelper.Driver.Quit();
+            DriverContext.Driver.Quit();
         }
     }
 }
